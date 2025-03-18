@@ -1,4 +1,5 @@
 import streamlit as st
+import geopy
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import subprocess
