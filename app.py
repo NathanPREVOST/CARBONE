@@ -1,6 +1,14 @@
 import streamlit as st
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
+import subprocess
+import sys
+
+try:
+    from geopy.geocoders import Nominatim
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "geopy"])
+    from geopy.geocoders import Nominatim
 
 def get_coordinates(city):
     geolocator = Nominatim(user_agent="geo_distance_calculator")
